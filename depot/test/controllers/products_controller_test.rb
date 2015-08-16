@@ -52,4 +52,10 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+
+  test "should get sidebar" do
+    get :index
+    assert_response :success
+    assert_select '#columns #side a', minimum: 4
+  end
 end
