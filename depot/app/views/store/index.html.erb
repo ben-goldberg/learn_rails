@@ -3,7 +3,9 @@
 <% end %>
 
 <h1>Your Catalog</h1>
-
+<% if @count > 4 %>
+    <h3>You've been here <%= pluralize(@count, "time") %>!</h3>
+<% end %>
 <% cache ['store', Product.latest] do %>
     <% @products.each do |product| %>
         <% cache ['entry', product] do %>

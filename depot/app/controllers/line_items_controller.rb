@@ -38,6 +38,9 @@ class LineItemsController < ApplicationController
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
+
+    # Reset index counter
+    session[:counter] = 0
   end
 
   # PATCH/PUT /line_items/1
